@@ -3,15 +3,15 @@
 # @Date    : 2020-07-05 23:05:15
 # @Author  : Yang Jinfeng (${email})
 
+from keras.layers import Dense
+from keras.models import Sequential
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OrdinalEncoder
 from sklearn.preprocessing import OneHotEncoder
-from keras.models import Sequential
-from keras.layers import Dense
 
-filename="C:\\Users\\yangjinfeng\\git\\myneuralnetwork\\data\\breast-cancer.data"
+filename = "C:\\Users\\yangjinfeng\\git\\myneuralnetwork\\data\\breast-cancer.data"
+
 
 # load the dataset
 def load_dataset(filename):
@@ -21,7 +21,7 @@ def load_dataset(filename):
     dataset = data.values
     # split into input (X) and output (y) variables
     X = dataset[:, :-1]
-    y = dataset[:,-1]
+    y = dataset[:, -1]
     # format all fields as string
     X = X.astype(str)
     # reshape target to be a 2d array
@@ -29,8 +29,7 @@ def load_dataset(filename):
     return X, y
 
 
-
-def prepare_data(x,y):
+def prepare_data(x, y):
     # oe = OrdinalEncoder()
     ohe = OneHotEncoder()
     ohe.fit(x)
@@ -59,7 +58,7 @@ def test():
     model.fit(X_train_enc, y_train_enc, epochs=100, batch_size=16, verbose=0)
     # evaluate the keras model
     _, accuracy = model.evaluate(X_test_enc, y_test_enc, verbose=0)
-    print('Accuracy: %.2f' % (accuracy*100))
+    print('Accuracy: %.2f' % (accuracy * 100))
     print(_)
 
 

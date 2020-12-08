@@ -5,30 +5,29 @@ Created on 2020年6月27日
 @author: yangjinfeng
 '''
 import numpy as np
-from yjf.nn.wbvector import ParamVectorConverter 
+from yjf.nn.wbvector import ParamVectorConverter
+
 
 class MockLayer:
-    
+
     def __init__(self):
-        self.W = np.random.randn(3,2)
-        self.B = np.random.randn(3,1)
-        
-    
+        self.W = np.random.randn(3, 2)
+        self.B = np.random.randn(3, 1)
+
 
 class MockNet:
     def __init__(self):
         self.layers = []
         self.layers.append(MockLayer())
         self.layers.append(MockLayer())
-        
+
     def printnet(self):
         for l in self.layers:
             print(l.W)
             print(l.B)
 
 
-
-net=MockNet()
+net = MockNet()
 net.printnet()
 print(".............")
 pvc = ParamVectorConverter(net)

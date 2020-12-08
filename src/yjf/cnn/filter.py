@@ -5,11 +5,11 @@ Created on 2020��8��5��
 @author: yangjinfeng
 '''
 
+
 class Filter(object):
     '''
     classdocs
     '''
-
 
     def __init__(self, params):
         '''
@@ -24,4 +24,4 @@ class Filter(object):
 #     
 # 
 # 
-# class PoolFilter(Filter):        
+# class PoolFilter(Filter):

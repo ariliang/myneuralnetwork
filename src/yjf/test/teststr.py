@@ -6,6 +6,7 @@ Created on 2020年8月3日
 '''
 import numpy as np
 
+
 def test_encode_decode():
     str = "哈尔滨"
     str2 = "黑龙江"
@@ -17,9 +18,8 @@ def test_encode_decode():
     str2 = bs.decode("gbk")
     print(str2)
     print(bs[0:2].decode("gbk"))
-    bsa = np.array([bs,bs2])
+    bsa = np.array([bs, bs2])
     print(type(bsa))
-
 
 
 if __name__ == '__main__':
